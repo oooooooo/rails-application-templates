@@ -1,0 +1,16 @@
+Bullet.enable        = true
+Bullet.alert         = true
+Bullet.bullet_logger = true
+Bullet.console       = true
+Bullet.growl         = false
+Bullet.rails_logger  = true
+Bullet.bugsnag       = false
+Bullet.airbrake      = false
+Bullet.add_footer    = true
+# Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
+<% if ENV['SLACK_XMPP_HOST'] && ENV['SLACK_XMPP_USER'] && ENV['SLACK_XMPP_PASS'] %>
+Bullet.xmpp = { account:  '<%= ENV['SLACK_XMPP_USER'] %>',
+                password: '<%= ENV['SLACK_XMPP_PASS'] %>',
+                receiver: '<%= ENV['SLACK_XMPP_HOST'] %>',
+                show_online_status: true }
+<% end %>
