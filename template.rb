@@ -207,7 +207,7 @@ gem 'devise-i18n'
 gem 'activerecord-import'
 gem 'paranoia'
 gem 'ransack'
-gem 'squeel'
+gem 'squeel', github: 'danielrhodes/squeel' # https://github.com/activerecord-hackery/squeel/issues/352
 
 # gem 'sinatra', require: false
 # gem 'sidekiq' # bundle exec sidekiq -q default -q mailers
