@@ -153,6 +153,8 @@ gem_group :test do
   gem 'factory_girl_rails'
   gem 'fuubar' # The instafailing RSpec progress bar formatter
   gem 'launchy' # save and open page
+  gem 'metric_fu'
+#  gem 'parallel_tests'
   gem 'poltergeist'
 #  gem 'selenium-webdriver'
   gem 'simplecov'
