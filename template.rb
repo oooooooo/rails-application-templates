@@ -239,7 +239,7 @@ environment %Q{
 initializer 'airbrake.rb',               files('airbrake.erb')
 initializer 'bullet.rb',                 files('bullet.erb')
 initializer 'exception_notification.rb', files('exception_notification.erb') # run 'rails g exception_notification:install'
-initializer 'logger.rb',                 files('logger.erb')
+initializer 'logger.rb',                 files('logger.rb')
 
 run_bootswatch(bootstrap_id) if bootstrap_id >= 1
 run_devise if use_device
