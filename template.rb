@@ -143,6 +143,7 @@ gem_group :development, :test do
   gem 'quiet_assets'
   gem 'rack-dev-mark'
   gem 'rails-erd', github: 'ready4god2513/rails-erd', branch: 'rails-4.2-support-fix' # bundle exec erd
+  gem 'rails-flog'
   gem 'rspec-rails'
 end
 
