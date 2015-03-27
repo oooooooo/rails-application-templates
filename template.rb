@@ -108,8 +108,6 @@ gem 'unicorn'
 
 gem_group :development do
   gem 'brakeman'
-  gem 'bullet'
-    gem 'xmpp4r'
   gem 'rack-mini-profiler'
   gem 'rails-footnotes'
   gem 'rails_best_practices'
@@ -126,6 +124,8 @@ gem_group :development, :test do
   gem 'better_errors'
     gem 'binding_of_caller'
   gem 'did_you_mean'
+  gem 'bullet'
+    gem 'xmpp4r'
   gem 'figaro'
   gem 'guard-brakeman', github: 'guard/guard-brakeman'
   gem 'guard-bundler'
