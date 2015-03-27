@@ -276,6 +276,8 @@ end
 insert_into_file 'spec/rails_helper.rb', after: "# Add additional requires below this line. Rails is not loaded until this point!\n" do <<-CODE
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
+require 'simplecov'
+SimpleCov.start
 CODE
 end
 
