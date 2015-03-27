@@ -100,8 +100,6 @@ end
 
 run 'bundle update'
 
-add_source 'https://rails-assets.org'
-
 gem 'therubyracer', platforms: :ruby
 gem 'unicorn'
 #gem 'unicorn-rails'
@@ -186,9 +184,12 @@ gem 'slim-rails'
 # gem 'jquery-datetimepicker-rails'
 # gem 'jquery-fileupload-rails'
 # gem 'nprogress-rails'
-# gem 'rails-assets-knockout'
-# gem 'rails-assets-vue'
-# gem 'rails-timeago'
+
+# source 'https://rails-assets.org' do
+#   gem 'rails-assets-knockout'
+#   gem 'rails-assets-vue'
+#   gem 'rails-timeago'
+# end
 
 # gem 'c3-rails'
 # gem 'd3-rails'
