@@ -282,6 +282,7 @@ end
 after_bundle do
   run 'bundle exec guard init'
   gsub_file 'Guardfile', ':run_on_start => true', 'run_on_start: true, quiet: true'
+  gsub_file 'Guardfile', "guard 'rails' do",      "guard 'rails', CLI: 'rails server -b 0.0.0.0' do"
 
   rake 'db:create'
   rake 'db:migrate'
