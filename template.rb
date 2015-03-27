@@ -231,7 +231,7 @@ environment %Q{
   BetterErrors::Middleware.allow_ip! '192.168.0.0/9'
 
   # https://github.com/MiniProfiler/rack-mini-profiler
-  Rack::MiniProfiler.config.position = 'right'
+  Rack::MiniProfiler.config.position = 'left'
 
   # https://github.com/ryanb/letter_opener
   config.action_mailer.delivery_method = :letter_opener
