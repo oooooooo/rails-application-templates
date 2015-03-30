@@ -315,6 +315,8 @@ CODE
   create_file      '.rubocop.yml', files(     '.rubocop.yml')
   create_file 'spec/.rubocop.yml', files('spec/.rubocop.yml')
 
+  create_file '.rspec', files('.rspec')
+
   git :init
   git add: '.'
   git commit: %Q{ -m 'Initial commit' }
