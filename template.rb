@@ -299,8 +299,9 @@ after_bundle do
   remove_file 'app/assets/images/rails.png'
   remove_file 'README.rdoc'
 
-  create_file '.rubocop.yml', files('.rubocop.yml')
   run 'rubocop --auto-correct app/'
+  create_file      '.rubocop.yml', files(     '.rubocop.yml')
+  create_file 'spec/.rubocop.yml', files('spec/.rubocop.yml')
 
   git :init
   git add: '.'
