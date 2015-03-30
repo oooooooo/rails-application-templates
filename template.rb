@@ -109,7 +109,6 @@ gem_group :development do
   gem 'rack-mini-profiler'
   gem 'rails-footnotes'
   gem 'rails_best_practices'
-  gem 'rubocop'
 #   gem 'peek'
 #   gem 'peek-mysql2'
 #   gem 'peek-performance_bar'
@@ -131,6 +130,7 @@ gem_group :development, :test do
   gem 'guard-rails'
 #  gem 'guard-rails_best_practices', github: 'logankoester/guard-rails_best_practices' # Could not load 'guard/rails_best_practices'
   gem 'guard-rspec'
+  gem 'guard-rubocop'
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'letter_opener'
@@ -143,6 +143,7 @@ gem_group :development, :test do
   gem 'rails-erd', github: 'ready4god2513/rails-erd', branch: 'rails-4.2-support-fix' # bundle exec erd
   gem 'rails-flog'
   gem 'rspec-rails'
+  gem 'rubocop'
 end
 
 gem_group :test do
@@ -150,6 +151,7 @@ gem_group :test do
   gem 'database_cleaner'
   gem 'database_rewinder'
   gem 'factory_girl_rails'
+  gem 'faker'
   gem 'fuubar' # The instafailing RSpec progress bar formatter
   gem 'launchy' # save and open page
   gem 'metric_fu'
@@ -157,6 +159,9 @@ gem_group :test do
   gem 'poltergeist'
 #  gem 'selenium-webdriver'
   gem 'simplecov'
+  gem 'timecop'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 gem_group :production, :staging do
@@ -243,7 +248,6 @@ environment %Q{
 initializer 'airbrake.rb',               files('airbrake.erb')
 initializer 'bullet.rb',                 files('bullet.erb')
 initializer 'exception_notification.rb', files('exception_notification.erb') # run 'rails g exception_notification:install'
-initializer 'logger.rb',                 files('logger.rb')
 
 run_bootswatch(bootstrap_id) if bootstrap_id >= 1
 run_devise if use_device
@@ -294,6 +298,9 @@ after_bundle do
   remove_file 'public/index.html'
   remove_file 'app/assets/images/rails.png'
   remove_file 'README.rdoc'
+
+  create_file '.rubocop.yml', files('.rubocop.yml')
+  run 'rubocop --auto-correct app/'
 
   git :init
   git add: '.'
