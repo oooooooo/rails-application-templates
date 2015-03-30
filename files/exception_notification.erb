@@ -17,14 +17,14 @@ ExceptionNotification.configure do |config|
 
   # Email notifier sends notifications by email.
 
-  <% email = `git config user.email`.chop %>
+<% email = `git config user.email`.chop %>
   config.add_notifier :email, {
     email_prefix: '[#<%= app_name %>]',
     sender_address: %{"notifier" <<%= email %>>},
     exception_recipients: ['<%= email %>']
   }
 
-  <% if ENV['SLACK_WEBHOOK_URL'] %>
+<% if ENV['SLACK_WEBHOOK_URL'] %>
   config.add_notifier :slack, {
     webhook_url: '<%= ENV['SLACK_WEBHOOK_URL'] %>',
     channel: '#<%= app_name %>',
@@ -32,7 +32,7 @@ ExceptionNotification.configure do |config|
       #icon_url: 'http://'
     }
   }
-  <% end %>
+<% end %>
 
   # Campfire notifier sends notifications to your Campfire room. Requires 'tinder' gem.
   # config.add_notifier :campfire, {

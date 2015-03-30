@@ -128,7 +128,7 @@ gem_group :development, :test do
   gem 'guard-bundler'
   gem 'guard-livereload'
   gem 'guard-rails'
-#  gem 'guard-rails_best_practices', github: 'logankoester/guard-rails_best_practices' # Could not load 'guard/rails_best_practices'
+  gem 'guard-rails_best_practices', github: 'logankoester/guard-rails_best_practices' # Could not load 'guard/rails_best_practices'
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'hirb'
@@ -231,8 +231,9 @@ run 'bundle install'
 # Files
 #
 
-environment %Q{
-  # https://github.com/charliesome/better_errors
+# environment は 2 space を入れるので rails_best_practices 用に一行目は 2 space 削る
+data =<<CODE
+# https://github.com/charliesome/better_errors
   BetterErrors::Middleware.allow_ip! '192.168.0.0/9'
 
   # https://github.com/MiniProfiler/rack-mini-profiler
@@ -243,7 +244,8 @@ environment %Q{
 
   # https://github.com/dtaniwaki/rack-dev-mark
   config.rack_dev_mark.enable = true
-}, env: :development
+CODE
+environment data, env: :development
 
 initializer 'airbrake.rb',               files('airbrake.erb')
 initializer 'bullet.rb',                 files('bullet.erb')
@@ -289,6 +291,16 @@ after_bundle do
   run 'bundle exec guard init'
   gsub_file 'Guardfile', ':run_on_start => true', 'run_on_start: true, quiet: true'
   gsub_file 'Guardfile', "guard 'rails' do",      "guard 'rails', CLI: 'rails server -b 0.0.0.0' do"
+  append_to_file 'Guardfile' do <<-CODE
+
+guard :rails_best_practices, exclude: 'kaminari' do
+  watch(%r{^app/(.+)\.rb$})
+end
+CODE
+  end
+
+  # rails_best_practices fix
+  gsub_file 'config/initializers/devise.rb', '# ==> LDAP Configuration ', '# ==> LDAP Configuration' if use_device
 
   rake 'db:create'
   rake 'db:migrate'
