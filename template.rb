@@ -159,6 +159,8 @@ gem_group :test do
   gem 'poltergeist'
 #  gem 'selenium-webdriver'
   gem 'simplecov'
+  gem 'simplecov-json'
+  gem 'simplecov-rcov'
   gem 'timecop'
   gem 'vcr'
   gem 'webmock'
@@ -283,6 +285,12 @@ insert_into_file 'spec/rails_helper.rb', after: "# Add additional requires below
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
 require 'simplecov'
+require 'simplecov-json'
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::JSONFormatter,
+  SimpleCov::Formatter::RcovFormatter
+]
 SimpleCov.start
 CODE
 end
