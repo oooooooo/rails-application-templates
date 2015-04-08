@@ -174,7 +174,7 @@ gem 'rails_config'
 
 gem 'airbrake'
 
-gem 'exception_notification', git: 'https://github.com/smartinez87/exception_notification.git' # rails g exception_notification:install
+gem 'exception_notification' # rails g exception_notification:install
 gem 'slack-notifier'
 
 gem 'email_validator'
