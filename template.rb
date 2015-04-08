@@ -152,7 +152,6 @@ gem_group :test do
   gem 'database_rewinder'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'fuubar' # The instafailing RSpec progress bar formatter
   gem 'launchy' # save and open page
   gem 'metric_fu'
 #  gem 'parallel_tests'
