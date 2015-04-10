@@ -19,5 +19,8 @@ Style/CommentAnnotation:
 Style/Documentation:
   Enabled: false
 
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
 MethodLength:
   Max: 12
