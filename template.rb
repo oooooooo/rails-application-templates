@@ -148,7 +148,6 @@ end
 
 gem_group :test do
   gem 'capybara'
-  gem 'database_cleaner'
   gem 'database_rewinder'
   gem 'factory_girl_rails'
   gem 'faker'
