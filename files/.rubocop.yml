@@ -13,7 +13,13 @@ AllCops:
 Style/AsciiComments:
   Enabled: false
 
+Style/CommentAnnotation:
+  Enabled: false
+
 Style/Documentation:
+  Enabled: false
+
+Style/SingleSpaceBeforeFirstArg:
   Enabled: false
 
 MethodLength:

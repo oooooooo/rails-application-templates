@@ -151,7 +151,6 @@ gem_group :test do
   gem 'database_rewinder'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'fuubar' # The instafailing RSpec progress bar formatter
   gem 'launchy' # save and open page
   gem 'metric_fu'
 #  gem 'parallel_tests'
@@ -173,7 +172,7 @@ gem 'rails_config'
 
 gem 'airbrake'
 
-gem 'exception_notification', git: 'https://github.com/smartinez87/exception_notification.git' # rails g exception_notification:install
+gem 'exception_notification' # rails g exception_notification:install
 gem 'slack-notifier'
 
 gem 'email_validator'
