@@ -27,6 +27,12 @@ use_kaminari = true if yes?('Use kaminari? [yN]')
 # def
 #
 
+def css_file
+  File.exist?('app/assets/stylesheets/application.scss') ?
+    'app/assets/stylesheets/application.scss' :
+    'app/assets/stylesheets/application.css'
+end
+
 def files(filename)
   ERB.new(File.read("#{File.dirname(__FILE__)}/files/#{filename}")).result(binding)
 end
@@ -50,6 +56,10 @@ CODE
   end
 
   gsub_file 'app/views/layouts/application.html.erb', '<%= yield %>', %|<div class="container">\n<%= yield %>\n</div>|
+  insert_into_file css_file, before: ' */' do <<-CODE
+ *= require rails_bootstrap_forms
+CODE
+  end
 end
 
 def run_devise
@@ -82,13 +92,7 @@ CODE
 CODE
   end
 
-  file = ''
-  if File.exist?('app/assets/stylesheets/application.scss')
-    file = 'app/assets/stylesheets/application.scss'
-  else
-    file = 'app/assets/stylesheets/application.css'
-  end
-  insert_into_file file, before: ' */' do <<-CODE
+  insert_into_file css_file, before: ' */' do <<-CODE
  *= require devise_bootstrap_views
 CODE
   end
