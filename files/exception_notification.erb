@@ -15,7 +15,6 @@ if Rails.env.production?
     # Notifiers =================================================================
 
     # Email notifier sends notifications by email.
-
   <% email = `git config user.email`.chop %>
     config.add_notifier :email, {
       email_prefix: '[#<%= app_name %>]',
