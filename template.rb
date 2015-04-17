@@ -177,6 +177,7 @@ gem 'slack-notifier'
 
 gem 'email_validator'
 
+gem 'bootstrap_form'
 gem 'bootstrap-sass'
   gem 'autoprefixer-rails'
 gem 'bootswatch-rails'
