@@ -230,7 +230,7 @@ gem 'whenever'
 
 gem 'newrelic_rpm'
 
-run 'bundle install'
+run 'bundle install --jobs=4'
 
 #
 # Files
