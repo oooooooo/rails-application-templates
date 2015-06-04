@@ -222,7 +222,7 @@ gem 'devise-i18n'
 gem 'activerecord-import'
 gem 'paranoia'
 gem 'ransack'
-gem 'squeel'
+# gem 'squeel' # TODO 4.2.1 で動かない
 
 # gem 'sinatra', require: false
 # gem 'sidekiq' # bundle exec sidekiq -q default -q mailers
@@ -231,7 +231,7 @@ gem 'whenever'
 
 gem 'newrelic_rpm'
 
-run 'bundle install'
+run 'bundle install --jobs=4'
 
 #
 # Files
