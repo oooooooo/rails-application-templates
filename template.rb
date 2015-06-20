@@ -128,6 +128,7 @@ gem_group :development, :test do
   gem 'bullet'
     gem 'xmpp4r'
   gem 'figaro'
+  gem 'guard-ctags-bundler'
   gem 'guard-brakeman', github: 'guard/guard-brakeman'
   gem 'guard-bundler'
   gem 'guard-livereload'
