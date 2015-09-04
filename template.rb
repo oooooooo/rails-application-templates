@@ -241,6 +241,7 @@ run 'bundle install --jobs=4'
 data =<<CODE
 # https://github.com/charliesome/better_errors
   BetterErrors::Middleware.allow_ip! '192.168.0.0/9'
+  config.web_console.whitelisted_ips = '192.168.0.0/9'
 
   # https://github.com/MiniProfiler/rack-mini-profiler
   Rack::MiniProfiler.config.position = 'left'
