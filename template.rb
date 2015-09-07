@@ -173,7 +173,7 @@ gem_group :production, :staging do
   gem 'rails_12factor'
 end
 
-gem 'rails_config'
+gem 'config'
 
 gem 'airbrake'
 
@@ -262,7 +262,7 @@ run_bootswatch(bootstrap_id) if bootstrap_id >= 1
 run_devise if use_device
 run 'rails g devise_ldap_authenticatable:install' if use_device_with_ldap
 run 'rails g kaminari:views bootstrap3' if use_kaminari
-run 'rails g rails_config:install'
+run 'rails g config:install'
 run 'rails g rails_footnotes:install'
 run 'rails g rspec:install'
 run 'rails g squeel:initializer'
