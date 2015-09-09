@@ -189,6 +189,7 @@ gem 'bootswatch-rails'
 gem 'browser'
 gem 'font-awesome-rails'
 gem 'kaminari'
+gem 'kaminari-i18n'
 gem 'slim-rails'
 
 # gem 'chosen-rails'
