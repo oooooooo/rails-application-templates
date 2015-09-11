@@ -274,6 +274,8 @@ chmod 'bin/deploy.sh', 0755
 
 create_file 'bin/kill_unicorn.sh',            files('kill_unicorn.sh')
 chmod 'bin/kill_unicorn.sh', 0755
+create_file 'bin/run_unicorn.sh',             files('run_unicorn.sh')
+chmod 'bin/run_unicorn.sh', 0755
 
 remove_file '.gitignore'
 create_file '.gitignore',                     files('.gitignore')
