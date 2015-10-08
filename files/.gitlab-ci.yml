@@ -1,0 +1,19 @@
+before_script:
+  - bundle
+
+# rubocop:
+#   script:
+#     - bundle exec rubocop
+
+rails_best_practices:
+  script:
+    - bundle exec rails_best_practices
+
+brakeman:
+  script:
+    - bundle exec brakeman
+
+rspec:
+  script:
+    - bundle exec rake db:reset RAILS_ENV=test
+    - bundle exec rspec
