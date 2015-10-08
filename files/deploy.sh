@@ -18,14 +18,14 @@ echo "\033[0;32mgit branch\033[0;39m"
 DATE=`date +%Y%m%d-%H%I%S`
 
 echo "\033[0;32mrsync\033[0;39m"
-rsync -avzS --delete --exclude ".git/" --exclude "log/" --exclude "tmp/" -e ssh ~/$APP/ $SERVER:/home/webuser/$APP/
+rsync -avzS --delete --exclude "coverage/" --exclude ".git/" --exclude "log/" --exclude "tmp/" -e ssh ~/$APP/ $SERVER:/home/webuser/$APP/
 
 echo "\033[0;32mdb backup\033[0;39m"
 ssh $SERVER "/usr/bin/mysqldump -uroot ${APP}_production > /home/webuser/${APP}_production.${SERVER}"
 scp $SERVER:/home/webuser/${APP}_production.${SERVER} /home/webuser/${APP}/tmp/${APP}_production.${SERVER}
 
 echo "\033[0;32mrun server\033[0;39m"
-ssh $SERVER "cd /home/webuser/$APP/ && /home/webuser/.rbenv/shims/bundle"
+ssh $SERVER "cd /home/webuser/$APP/ && /home/webuser/.rbenv/shims/bundle > /dev/null"
 ssh $SERVER "cd /home/webuser/$APP/ && /home/webuser/.rbenv/shims/bundle exec rake assets:precompile RAILS_ENV=production"
 ssh $SERVER "/home/webuser/$APP/bin/kill_unicorn.sh $APP"
 ssh $SERVER "cd /home/webuser/$APP/ && /home/webuser/.rbenv/shims/bundle exec unicorn_rails -c ~/$APP/config/unicorn.rb -E production -D -l 127.0.0.1:3000"
