@@ -118,9 +118,11 @@ gem_group :development do
 #   gem 'peek-performance_bar'
 #   gem 'peek-rblineprof'
 #   gem 'pygments.rb', require: false # peek-rblineprof の syntax を highlight
+#   gemt 'stackprof'
 end
 
 gem_group :development, :test do
+  gem 'annotate'
   gem 'awesome_print'
   gem 'better_errors'
     gem 'binding_of_caller'
