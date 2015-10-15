@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $ sudo update-rc.d unicorn_assets defaults
+# $ sudo update-rc.d unicorn defaults
 
 ### BEGIN INIT INFO
 # Provides:          unicorn
@@ -18,7 +18,7 @@ USAGE="Usage: $0 <start|stop|restart|upgrade|rotate|force-stop>"
 
 # app settings
 USER="webuser"
-APP_NAME="assets"
+APP_NAME="APP_NAME"
 APP_ROOT="/home/$USER/$APP_NAME"
 ENV="production"
 
