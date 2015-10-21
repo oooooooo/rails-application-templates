@@ -19,6 +19,7 @@
 *.orig
 *.swp
 .DS_store
+._*
 /config/environments/*.local.yml
 /config/settings.local.yml
 /config/settings/*.local.yml
