@@ -118,9 +118,11 @@ gem_group :development do
 #   gem 'peek-performance_bar'
 #   gem 'peek-rblineprof'
 #   gem 'pygments.rb', require: false # peek-rblineprof の syntax を highlight
+#   gemt 'stackprof'
 end
 
 gem_group :development, :test do
+  gem 'annotate'
   gem 'awesome_print'
   gem 'better_errors'
     gem 'binding_of_caller'
@@ -173,7 +175,7 @@ gem_group :production, :staging do
   gem 'rails_12factor'
 end
 
-gem 'rails_config'
+gem 'config'
 
 gem 'airbrake'
 
@@ -190,6 +192,7 @@ gem 'browser'
 gem 'coffee-rails-source-maps'
 gem 'font-awesome-rails'
 gem 'kaminari'
+gem 'kaminari-i18n'
 gem 'slim-rails'
 
 # gem 'chosen-rails'
@@ -242,6 +245,7 @@ run 'bundle install --jobs=4'
 data =<<CODE
 # https://github.com/charliesome/better_errors
   BetterErrors::Middleware.allow_ip! '192.168.0.0/9'
+  config.web_console.whitelisted_ips = '192.168.0.0/9'
 
   # https://github.com/MiniProfiler/rack-mini-profiler
   Rack::MiniProfiler.config.position = 'left'
@@ -262,7 +266,7 @@ run_bootswatch(bootstrap_id) if bootstrap_id >= 1
 run_devise if use_device
 run 'rails g devise_ldap_authenticatable:install' if use_device_with_ldap
 run 'rails g kaminari:views bootstrap3' if use_kaminari
-run 'rails g rails_config:install'
+run 'rails g config:install'
 run 'rails g rails_footnotes:install'
 run 'rails g rspec:install'
 run 'rails g squeel:initializer'
@@ -273,6 +277,8 @@ chmod 'bin/deploy.sh', 0755
 
 create_file 'bin/kill_unicorn.sh',            files('kill_unicorn.sh')
 chmod 'bin/kill_unicorn.sh', 0755
+create_file 'bin/run_unicorn.sh',             files('run_unicorn.sh')
+chmod 'bin/run_unicorn.sh', 0755
 
 remove_file '.gitignore'
 create_file '.gitignore',                     files('.gitignore')
