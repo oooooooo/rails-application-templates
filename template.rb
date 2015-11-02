@@ -131,7 +131,7 @@ gem_group :development, :test do
     gem 'xmpp4r'
   gem 'figaro'
   gem 'guard-ctags-bundler'
-  gem 'guard-brakeman', github: 'guard/guard-brakeman'
+  gem 'guard-brakeman' #, github: 'guard/guard-brakeman'
   gem 'guard-bundler'
   gem 'guard-livereload'
   gem 'guard-rails'
@@ -147,7 +147,7 @@ gem_group :development, :test do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'rack-dev-mark'
-  gem 'rails-erd', github: 'ready4god2513/rails-erd', branch: 'rails-4.2-support-fix' # bundle exec erd
+  gem 'rails-erd' #, github: 'ready4god2513/rails-erd', branch: 'rails-4.2-support-fix' # rake erd
   gem 'rails-flog'
   gem 'rspec-rails'
   gem 'rubocop'
