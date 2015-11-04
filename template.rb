@@ -126,6 +126,7 @@ gem_group :development, :test do
   gem 'awesome_print'
   gem 'better_errors'
     gem 'binding_of_caller'
+  gem 'bundler-audit', require: false
   gem 'did_you_mean'
   gem 'bullet'
     gem 'xmpp4r'
