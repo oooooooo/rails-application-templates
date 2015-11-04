@@ -219,7 +219,7 @@ gem 'net-ldap'
 gem 'cancancan'
 gem 'devise'
 gem 'devise-bootstrap-views'
-gem 'devise_ldap_authenticatable', git: 'https://github.com/cschiewek/devise_ldap_authenticatable.git'
+gem 'devise_ldap_authenticatable'
 gem 'devise-i18n-views'
 gem 'devise-i18n'
 
