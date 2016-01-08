@@ -24,3 +24,6 @@ Style/SingleSpaceBeforeFirstArg:
 
 MethodLength:
   Max: 12
+
+Style/NumericLiterals:
+  MinDigits: 7
