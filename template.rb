@@ -178,7 +178,7 @@ end
 
 gem 'config'
 
-gem 'airbrake'
+# gem 'airbrake'
 
 gem 'exception_notification' # rails g exception_notification:install
 gem 'slack-notifier'
