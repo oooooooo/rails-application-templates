@@ -25,5 +25,11 @@ Style/SingleSpaceBeforeFirstArg:
 MethodLength:
   Max: 12
 
+LineLength:
+  Max: 130
+
 Style/NumericLiterals:
   MinDigits: 7
+
+Metrics/AbcSize:
+  Max: 24
