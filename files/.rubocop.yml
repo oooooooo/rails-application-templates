@@ -1,5 +1,10 @@
+# http://blog.onk.ninja/2015/10/27/rubocop-getting-started
+# https://github.com/onk/onkcop/blob/master/config/rubocop.yml
+
+Rails:
+  Enabled: true
+
 AllCops:
-  RunRailsCops: true
   Exclude:
     - 'bin/**/*'
     - 'config/**/*'
@@ -19,7 +24,7 @@ Style/CommentAnnotation:
 Style/Documentation:
   Enabled: false
 
-Style/SingleSpaceBeforeFirstArg:
+Style/SpaceBeforeFirstArg:
   Enabled: false
 
 MethodLength:
