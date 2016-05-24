@@ -178,7 +178,7 @@ end
 
 gem 'config'
 
-gem 'airbrake'
+# gem 'airbrake'
 
 gem 'exception_notification' # rails g exception_notification:install
 gem 'slack-notifier'
@@ -211,8 +211,8 @@ gem 'slim-rails'
 # gem 'd3-rails'
 
 # gem 'country_select', github: 'stefanpenner/country_select'
-# gem 'holidays'
-#   gem 'rails-i18n'
+gem 'holidays'
+gem 'rails-i18n'
 gem 'ungarbled' # 日本語ファイルの文字化け防止
 
 gem 'net-ping'
